@@ -10,6 +10,9 @@ Features:
 
 - [simple GenServer](https://github.com/surgeventures/configurable/blob/master/lib/configurable/printer.ex) that periodically prints message configured in above facilities
 
+- [Dockerfile](https://github.com/surgeventures/configurable/blob/master/Dockerfile) that presents
+  how to build minimal release image
+
 ## Usage
 
 Build the release:
@@ -35,4 +38,11 @@ Run with invalid env var:
 ```
 MESSAGE="My message" COLOR=invalid INTERVAL=500 _build/prod/rel/configurable/bin/configurable start
 MESSAGE="My message" COLOR=magenta INTERVAL=foo _build/prod/rel/configurable/bin/configurable start
+```
+
+With Docker:
+
+```
+docker build . -t app
+docker run -e MESSAGE="My message" app bin/configurable start
 ```
