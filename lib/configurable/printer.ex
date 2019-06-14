@@ -1,5 +1,7 @@
 defmodule Configurable.Printer do
-  @moduledoc false
+  @moduledoc """
+  Periodically prints to stdout configured message with configured color in configured intervals.
+  """
 
   use GenServer
 
@@ -33,18 +35,14 @@ defmodule Configurable.Printer do
   end
 
   defp get_interval do
-    get_env(:interval)
+    Application.get_env(:configurable, :interval)
   end
 
   defp get_message do
-    get_env(:message)
+    Application.get_env(:configurable, :message)
   end
 
   defp get_color do
-    get_env(:color)
-  end
-
-  defp get_env(key) do
-    Application.get_env(:configurable, key)
+    Application.get_env(:configurable, (:color)
   end
 end

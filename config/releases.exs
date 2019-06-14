@@ -14,7 +14,7 @@
 # 4. While this file defines the runtime configuration for prod env, it's still feasible to put the
 #    build-time prod configuration in config.exs/prod.exs in order to fail even earlier.
 #
-# More information here:
+# More info:
 #
 #   https://hexdocs.pm/mix/master/Mix.Tasks.Release.html#module-runtime-configuration
 
