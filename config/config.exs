@@ -14,5 +14,11 @@ import Config
 # Configure mix-oriented dev/test envs & build-time/default config for prod env
 config :configurable,
   message: "Test message",
-  color: IO.ANSI.cyan(),
-  interval: 5_000
+  color: :cyan,
+  interval: 1_000,
+  start_printer: Mix.env() != :test
+
+# Same for library config
+config :logger,
+  level: :info,
+  console: [metadata: :all]

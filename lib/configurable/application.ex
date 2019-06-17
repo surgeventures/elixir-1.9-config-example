@@ -4,9 +4,14 @@ defmodule Configurable.Application do
   use Application
 
   def start(_type, _args) do
-    children = [
-      Configurable.Printer
-    ]
+    children =
+      if Application.get_env(:configurable, :start_printer) do
+        [
+          Configurable.Printer
+        ]
+      else
+        []
+      end
 
     opts = [
       strategy: :one_for_one,
